@@ -13,6 +13,7 @@ def main():
         df = spark.createDataFrame([("Alice", 25)], ["name", "age"])
         logger.info(f"Loaded {df.count()} records.")
         logger.info("ETL job completed successfully.")
+        spark.stop()
     except Exception as e:
         logger.error(f"ETL job failed: {e}", exc_info=True)
         raise

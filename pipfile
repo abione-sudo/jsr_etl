@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+py4j = "==0.10.9.9"
+pyspark = "==4.0.1"
+pandas = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"
