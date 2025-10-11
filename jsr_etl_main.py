@@ -1,5 +1,6 @@
 from lib.logger import get_logger
 from lib.utils import get_spark_session 
+from etl.spark_transfms.practice import users_agg
 
 
 def main():
@@ -10,8 +11,8 @@ def main():
     logger.info("starting ETL process")
     try:
         # Example ETL steps
-        df = spark.createDataFrame([("Alice", 25)], ["name", "age"])
-        logger.info(f"Loaded {df.count()} records.")
+        users_agg(spark) 
+        
         logger.info("ETL job completed successfully.")
         spark.stop()
     except Exception as e:

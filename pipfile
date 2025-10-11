@@ -7,6 +7,7 @@ name = "pypi"
 py4j = "==0.10.9.9"
 pyspark = "==4.0.1"
 pandas = "*"
+faker = "*"
 
 [dev-packages]
 
