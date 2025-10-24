@@ -11,8 +11,12 @@ def main():
     logger.info("starting ETL process")
     try:
         # Example ETL steps
-        users_agg(spark) 
-        
+        #users_agg(spark) 
+        delta_path = "/Users/abeee/data_engineering/data/delta_tables/user_agg"
+        users_agg(spark)
+
+        df=spark.read.format("delta").load(delta_path)
+        df.show()
         logger.info("ETL job completed successfully.")
         spark.stop()
     except Exception as e:

@@ -17,7 +17,7 @@ def user_generator():
 
 
 
-with open(f'{os.getcwd()}\\data\\users.csv','w') as f:
+with open(f'/Users/abeee/data_engineering/data/raw_data/users.csv','w') as f:
      f.write("name,order_id,order_date,amount\n")
      for row in user_generator():
         f.write(f"{row.name},{row.order_id},{row.order_date},{row.amount}\n")
