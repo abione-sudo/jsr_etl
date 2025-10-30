@@ -12,11 +12,14 @@ def main():
     try:
         # Example ETL steps
         #users_agg(spark) 
-        delta_path = "/Users/abeee/data_engineering/data/delta_tables/user_agg"
-        users_agg(spark)
+        delta_path = "/Users/abeee/data_engineering/data/delta_tables/test_table"
+        df_table=spark.read.format("delta").load(delta_path)
+        df_table.show()
+        #[(1, "Alice", 29),(2, "Bob", 31),(3, "Cathy", 25)]
 
-        df=spark.read.format("delta").load(delta_path)
-        df.show()
+        df_new_records=spark.createDataFrame([(1, "Alice", 39),(4,"abhi",31)], ["id", "name", "age"])
+        
+
         logger.info("ETL job completed successfully.")
         spark.stop()
     except Exception as e:

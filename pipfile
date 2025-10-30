@@ -8,8 +8,12 @@ py4j = "==0.10.9.9"
 pyspark = "==4.0.1"
 pandas = "*"
 faker = "*"
+confluent-kafka = "*"
+apache-airflow = "*"
+delta-spark = "*"
 
 [dev-packages]
+ipykernel = "*"
 
 [requires]
 python_version = "3.11"
